@@ -1,0 +1,15 @@
+[project]
+name = "dsa-patterns-python"
+version = "0.1.0"
+description = "Python implementations of common data structures and algorithms patterns for interview preparation."
+requires-python = ">=3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
