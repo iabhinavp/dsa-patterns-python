@@ -20,3 +20,44 @@ def maximum_transaction_window(
         largest_total = max(largest_total, window_total)
 
     return largest_total
+
+
+
+
+
+def max_window_sum(values: list[int], k: int) -> int:
+
+    if k < 0 or k > len(values) or k == 0:
+        raise ValueError
+
+
+    total_sum_values = 0
+
+    for index in range(k):
+        total_sum_values += values[index]
+
+    largest_sum = total_sum_values
+
+    for entering_index in range(k, len(values)):
+
+        removing_index = entering_index - k 
+
+        total_sum_values -= values[removing_index]
+        total_sum_values += values[entering_index]
+
+        largest_sum = max(largest_sum, total_sum_values)
+
+
+    return largest_sum
+
+
+
+
+
+
+
+
+
+
+
+
